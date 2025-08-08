@@ -1,0 +1,17 @@
+(defun R3 (/ ss pt)
+  (princ "\nSelect object to rotate 270 degrees: ")
+  (if (setq ss (ssget))
+    (progn
+      (princ "\nSpecify base point for rotation: ")
+      (if (setq pt (getpoint))
+        (progn
+          (command "ROTATE" ss "" pt "270")
+          (princ "\nObject rotated 270 degrees.")
+        )
+        (princ "\nNo base point specified.")
+      )
+    )
+    (princ "\nNo object selected.")
+  )
+  (princ)
+) 
