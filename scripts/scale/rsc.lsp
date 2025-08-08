@@ -1,0 +1,36 @@
+(defun rsc (/ img base_pt ref_pt1 ref_pt2 new_pt)
+  (princ "\nSelect image to scale by reference: ")
+  (if (setq img (car (entsel)))
+    (progn
+      (princ "\nSpecify base point: ")
+      (if (setq base_pt (getpoint))
+        (progn
+          (princ "\nSpecify first point of reference length: ")
+          (if (setq ref_pt1 (getpoint))
+            (progn
+              (princ "\nSpecify second point of reference length: ")
+              (if (setq ref_pt2 (getpoint ref_pt1))
+                (progn
+                  (princ "\nSpecify new length: ")
+                  (if (setq new_pt (getpoint ref_pt2))
+                    (progn
+                      ; Start the SCALE command with the selected image
+                      (command "SCALE" img "" base_pt "R" ref_pt1 ref_pt2 new_pt)
+                      (princ "\nImage scaled by reference successfully.")
+                    )
+                    (princ "\nNo new length point specified.")
+                  )
+                )
+                (princ "\nNo second reference point specified.")
+              )
+            )
+            (princ "\nNo first reference point specified.")
+          )
+        )
+        (princ "\nNo base point specified.")
+      )
+    )
+    (princ "\nNo image selected.")
+  )
+  (princ)
+) 

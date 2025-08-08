@@ -1,4 +1,4 @@
-(defun R3 (/ ss pt)
+(defun R270 (/ ss pt)
   (princ "\nSelect object to rotate 270 degrees: ")
   (if (setq ss (ssget))
     (progn
