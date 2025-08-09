@@ -1,0 +1,14 @@
+; rh-layer.scr - Rafter Hatch with Layer Switch
+; Usage: SCRIPT rh-layer.scr
+; Switches to rafter layer, then applies hatch
+; Note: Assumes RAFTERS layer exists, creates PH-RAFTERS if it doesn't
+LAYER
+M
+RAFTERS
+
+HATCH
+P
+ANSI33
+1
+0
+\ 

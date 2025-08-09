@@ -1,0 +1,9 @@
+; scimg.scr - Scale Image (simplified)
+; Usage: SCRIPT scimg.scr
+; Note: This is a simplified version. For automatic box fitting,
+; use the AutoLISP version in AutoCAD full.
+; Prompts: Select objects, specify base point, specify scale factor or reference
+SCALE
+\
+\
+\ 

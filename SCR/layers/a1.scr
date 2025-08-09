@@ -1,0 +1,10 @@
+; a1.scr - Move objects to A1 Dimensions Layer
+; Usage: SCRIPT a1.scr
+; Note: Assumes A1-DIMS layer exists. Create layer first if needed.
+; Prompts: Select objects to move to A1-DIMS layer
+CHANGE
+\
+
+P
+LA
+A1-DIMS 

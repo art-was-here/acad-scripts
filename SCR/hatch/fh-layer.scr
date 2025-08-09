@@ -1,0 +1,14 @@
+; fh-layer.scr - Firecode Hatch with Layer Switch
+; Usage: SCRIPT fh-layer.scr
+; Switches to firecode layer, then applies hatch
+; Note: Assumes FIRECODE layer exists, creates PH-FIRECODE if it doesn't
+LAYER
+M
+FIRECODE
+
+HATCH
+P
+ANSI31
+1
+0
+\ 

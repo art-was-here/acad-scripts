@@ -1,0 +1,11 @@
+; rsc.scr - Reference Scale
+; Usage: SCRIPT rsc.scr
+; Automatically uses reference option to eliminate manual R and Enter
+; Prompts: Select objects, base point, reference length (2 points), new length
+SCALE
+\
+\
+R
+\
+\
+\ 

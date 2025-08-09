@@ -1,0 +1,7 @@
+; R270.scr - Rotate selected objects 270 degrees
+; Usage: SCRIPT R270.scr
+; Prompts: Select objects, specify base point
+ROTATE
+\
+\
+270 

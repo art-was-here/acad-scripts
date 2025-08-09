@@ -1,0 +1,7 @@
+; R180.scr - Rotate selected objects 180 degrees
+; Usage: SCRIPT R180.scr
+; Prompts: Select objects, specify base point
+ROTATE
+\
+\
+180 

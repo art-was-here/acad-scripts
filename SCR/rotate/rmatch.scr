@@ -1,0 +1,12 @@
+; rmatch.scr - Rotate object to match angle (simplified)
+; Usage: SCRIPT rmatch.scr
+; Note: This is a simplified version. User must manually determine angle.
+; For full functionality, use the AutoLISP version in AutoCAD full.
+; Prompts: Select objects, specify base point, specify rotation angle
+ROTATE
+\
+\
+R
+\
+\
+\ 

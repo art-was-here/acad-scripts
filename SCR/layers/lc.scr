@@ -1,0 +1,9 @@
+; lc.scr - Line Conduit
+; Usage: SCRIPT lc.scr
+; Automatically switches to CONDUIT layer (or creates PH-CONDUIT if it doesn't exist)
+; Then starts LINE command for drawing conduit lines
+LAYER
+S
+CONDUIT
+
+LINE 

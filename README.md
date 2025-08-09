@@ -1,11 +1,18 @@
 # AutoCAD Scripts Collection
 
-A collection of AutoLISP scripts designed to streamline common AutoCAD workflows for architectural, structural, and electrical drawings.
+A collection of AutoLISP scripts and AutoCAD LT compatible script files designed to streamline common AutoCAD workflows for architectural, structural, and electrical drawings.
+
+## Quick Start
+
+- **AutoCAD Full Version**: Use scripts in `AutoLISP/` folder (.lsp files)
+- **AutoCAD LT**: Use scripts in `SCR/` folder (.scr files)
 
 ## Table of Contents
 
 - [Features](#features)
 - [Installation](#installation)
+  - [AutoLISP Scripts (AutoCAD Full)](#autolisp-scripts-autocad-full)
+  - [Script Files (AutoCAD LT)](#script-files-autocad-lt)
 - [Scripts Overview](#scripts-overview)
   - [Rotation Scripts](#rotation-scripts)
   - [Scaling Scripts](#scaling-scripts)
@@ -18,7 +25,8 @@ A collection of AutoLISP scripts designed to streamline common AutoCAD workflows
 
 ## Features
 
-- **Smart Layer Detection**: Scripts automatically detect existing project layers
+- **Dual Compatibility**: Works with both AutoCAD full and AutoCAD LT
+- **Smart Layer Detection**: AutoLISP scripts automatically detect existing project layers
 - **Placeholder Naming**: Uses `PH-` prefix for placeholder layers when standards aren't found
 - **Non-Intrusive**: Respects existing drawing standards and layer structures
 - **User-Friendly**: Simple command names and clear prompts
@@ -26,9 +34,19 @@ A collection of AutoLISP scripts designed to streamline common AutoCAD workflows
 
 ## Installation
 
+### AutoLISP Scripts (AutoCAD Full)
+
 1. Download or clone this repository
-2. In AutoCAD, use the `APPLOAD` command or drag `.lsp` files into AutoCAD
+2. In AutoCAD, use the `APPLOAD` command or drag `.lsp` files from `AutoLISP/` folder into AutoCAD
 3. Type the command name (e.g., `fh`, `rh`, `a1`) to use the script
+
+### Script Files (AutoCAD LT)
+
+1. Download or clone this repository
+2. Use the `SCRIPT` command in AutoCAD LT and browse to `.scr` files in `SCR/` folder
+3. Alternatively, drag `.scr` files directly into AutoCAD LT
+
+**Note**: See `SCR/README.md` for detailed AutoCAD LT usage instructions.
 
 ### Batch Loading
 

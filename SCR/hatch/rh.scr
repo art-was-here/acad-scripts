@@ -1,0 +1,10 @@
+; rh.scr - Rafter Hatch
+; Usage: SCRIPT rh.scr
+; Note: Manually ensure you're on the correct rafter layer before running
+; Uses ANSI33 pattern (good for wood/lumber). Prompts for internal point selection.
+HATCH
+P
+ANSI33
+1
+0
+\ 

@@ -1,0 +1,7 @@
+; R90.scr - Rotate selected objects 90 degrees
+; Usage: SCRIPT R90.scr
+; Prompts: Select objects, specify base point
+ROTATE
+\
+\
+90 

@@ -1,0 +1,10 @@
+; fh.scr - Firecode Hatch
+; Usage: SCRIPT fh.scr
+; Note: Manually ensure you're on the correct firecode layer before running
+; Uses ANSI31 pattern. Prompts for internal point selection.
+HATCH
+P
+ANSI31
+1
+0
+\ 
