@@ -110,6 +110,111 @@ A1:  ^C^CSCRIPT;C:\Scripts\SCR\layers\a1.scr;
 LC:  ^C^CSCRIPT;C:\Scripts\SCR\layers\lc.scr;
 ```
 
+## Creating Custom Commands
+
+You can bind these scripts to custom command names that work just like built-in AutoCAD commands. This allows you to type short commands (like `R90`, `FH`, `LC`) instead of loading scripts manually.
+
+### Method 1: Using CUI (Customize User Interface)
+
+1. **Open CUI Editor:**
+   - Type `CUI` command in AutoCAD LT
+   - Or go to **Manage** tab → **Customization** → **User Interface**
+
+2. **Create New Command:**
+   - In left panel, expand **Customizations in All Files**
+   - Right-click on **Commands** → **New Command**
+   - Give it a name (e.g., "R90 Rotate")
+
+3. **Set Command Properties:**
+   - **Name**: `R90 Rotate`
+   - **Command Name**: `R90` (this is what you'll type)
+   - **Macro**: `^C^CSCRIPT;C:\Scripts\SCR\rotate\R90.scr;`
+   - **Description**: `Rotate selected objects 90 degrees`
+
+4. **Apply and Close:**
+   - Click **Apply** then **OK**
+   - Test by typing `R90` in command line
+
+### Method 2: Using ACAD.PGP File (Command Aliases)
+
+1. **Open ACAD.PGP file:**
+   - Type `ALIASEDIT` command
+   - Or manually edit the file (usually in AutoCAD support folder)
+
+2. **Add Custom Aliases:**
+   Add these lines to create command shortcuts:
+   ```
+   R90,        *SCRIPT,C:\Scripts\SCR\rotate\R90.scr
+   R180,       *SCRIPT,C:\Scripts\SCR\rotate\R180.scr
+   R270,       *SCRIPT,C:\Scripts\SCR\rotate\R270.scr
+   FH,         *SCRIPT,C:\Scripts\SCR\hatch\fh-layer.scr
+   RH,         *SCRIPT,C:\Scripts\SCR\hatch\rh-layer.scr
+   LC,         *SCRIPT,C:\Scripts\SCR\layers\lc.scr
+   A1,         *SCRIPT,C:\Scripts\SCR\layers\a1.scr
+   RSC,        *SCRIPT,C:\Scripts\SCR\scale\rsc.scr
+   ```
+
+3. **Reload Aliases:**
+   - Type `REINIT` command
+   - Check **PGP File** box
+   - Click **OK**
+
+### Method 3: AutoLISP Wrapper (AutoCAD Full Only)
+
+For AutoCAD full version users, you can create simple AutoLISP wrappers:
+
+```lisp
+; Save as custom-commands.lsp
+(defun C:R90 () (command "SCRIPT" "C:\\Scripts\\SCR\\rotate\\R90.scr"))
+(defun C:R180 () (command "SCRIPT" "C:\\Scripts\\SCR\\rotate\\R180.scr"))
+(defun C:R270 () (command "SCRIPT" "C:\\Scripts\\SCR\\rotate\\R270.scr"))
+(defun C:FH () (command "SCRIPT" "C:\\Scripts\\SCR\\hatch\\fh-layer.scr"))
+(defun C:RH () (command "SCRIPT" "C:\\Scripts\\SCR\\hatch\\rh-layer.scr"))
+(defun C:LC () (command "SCRIPT" "C:\\Scripts\\SCR\\layers\\lc.scr"))
+(defun C:A1 () (command "SCRIPT" "C:\\Scripts\\SCR\\layers\\a1.scr"))
+(defun C:RSC () (command "SCRIPT" "C:\\Scripts\\SCR\\scale\\rsc.scr"))
+```
+
+### Recommended Setup
+
+**For AutoCAD LT Users:**
+- Use **Method 2 (ACAD.PGP)** for simplest setup
+- Use **Method 1 (CUI)** for more advanced customization with icons and tooltips
+
+**For AutoCAD Full Users:**
+- Use the AutoLISP versions from `AutoLISP/` folder instead
+- Or use **Method 3** if you prefer script files
+
+### Example Custom Command Usage
+
+Once set up, you can use commands like native AutoCAD commands:
+
+```
+Command: R90
+[Script automatically loads and prompts for object selection]
+
+Command: FH
+[Script switches to firecode layer and starts hatching]
+
+Command: LC
+[Script switches to conduit layer and starts line drawing]
+```
+
+### Path Configuration Tips
+
+1. **Use Full Paths:** Always use complete file paths in macros
+2. **Forward Slashes:** Use `/` or double backslashes `\\` in paths
+3. **Network Paths:** Can use UNC paths for shared script locations
+4. **Relative Paths:** Not recommended for script commands
+
+### Testing Your Setup
+
+After creating custom commands:
+
+1. **Test Each Command:** Type the command name and verify it works
+2. **Check Paths:** Ensure script files are accessible from the specified paths
+3. **Document Commands:** Keep a list of your custom commands for reference
+
 ## Comparison with AutoLISP
 
 | Feature | AutoLISP (.lsp) | Script (.scr) |
